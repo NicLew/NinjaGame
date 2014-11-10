@@ -1,46 +1,46 @@
 NinjaGame
 =========
 
-#Description
+###Description
 
-The game will involve controlling your character by having them jump from wall to wall. When
+This game is coded in Python and involves controlling your character by having them jump from wall to wall. When
 the user clicks, the character will jump in the direction of the click. The user can click
 a second time to change the character's direction midair. The current idea is to have the
 character be a ninja. The ninja's first jump will include a sword attack, and their midair
 direction change will include a kicking attack. The game will have targets that require
 different attacks to hit. The goal will be to get every target that appears.
 
-#How to Build the Code
+###How to Build the Code
 
-sdkfsdjfkdsjf
+???
 
-#How to Run the Code
+###How to Run the Code
 
-alsdkfj
+???
 
-#Dependencies
+###Dependencies
 
-Pygame
-Pyganim
+Pygame ???
+Pyganim ???
 
-#Bug Reporting
+###Bug Reporting
 
 If you want to file a bug report, please open a GitHub Issue.
 
-#How to Contribute
+###How to Contribute
 
-skdfj
+???
 
-#System information
+###System information
 
-This code has been tested on a OpenSUSE 13.1 64 bit OS.
+This code has been tested on a OpenSUSE 13.1 64 bit Operating System.
 
-#Documentation
+###Documentation
 
-alsdfk
+At this point, all documentation is in the code.
 
-#License Information
+###License Information
 
-GPL License
+This software is under the GPL License
 
-#Authors?
+###Authors?
