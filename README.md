@@ -12,7 +12,12 @@ different attacks to hit. The goal will be to get every target that appears.
 
 ###How to Build the Code
 
-???
+	1. Install python3 (https://www.python.org/)
+	2. Install pygame
+			(on OpenSUSE) sudo zypper install python-pygame
+			(for docs)    sudo zypper install python-pygame-doc
+	3. Fork and clone this repository
+	4. Run project with python3 ???
 
 ###How to Run the Code
 
@@ -21,7 +26,7 @@ different attacks to hit. The goal will be to get every target that appears.
 ###Dependencies
 
 Pygame ???
-	http://www.pygame.org/download.shtml
+
 Pyganim ???
 
 ###Bug Reporting
