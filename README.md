@@ -21,6 +21,7 @@ different attacks to hit. The goal will be to get every target that appears.
 ###Dependencies
 
 Pygame ???
+	http://www.pygame.org/download.shtml
 Pyganim ???
 
 ###Bug Reporting
