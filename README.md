@@ -53,4 +53,4 @@ At this point, all documentation is in the code.
 
 ###License Information
 
-This software is under the GPL License
+This software is under the GNU General Public License (GPL)
