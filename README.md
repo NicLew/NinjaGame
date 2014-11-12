@@ -17,17 +17,16 @@ different attacks to hit. The goal will be to get every target that appears.
 			(on OpenSUSE) sudo zypper install python-pygame
 			(for docs)    sudo zypper install python-pygame-doc
 	3. Fork and clone this repository
-	4. Run project with python3 ???
 
 ###How to Run the Code
 
-???
+	python3 ???name???
 
 ###Dependencies
 
-Pygame ???
+Pygame (1.9.1)
 
-Pyganim ???
+Pyganim, ver 1
 
 ###Bug Reporting
 
