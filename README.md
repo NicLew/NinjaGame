@@ -15,15 +15,14 @@ different attacks to hit. The goal will be to get every target that appears.
 1. Install python3 (https://www.python.org/)
 2. Install pygame and pygame documentation on OpenSUSE:
 
-	sudo zypper install python-pygame
-	
-	sudo zypper install python-pygame-doc
+	`sudo zypper install python-pygame`
+	`sudo zypper install python-pygame-doc`
 	
 3. Fork and clone this repository
 
 ###How to Run the Code
 
-	python3 NinjaGame.py
+	`python3 NinjaGame.py`
 
 ###Dependencies
 
