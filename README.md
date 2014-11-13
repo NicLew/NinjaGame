@@ -12,15 +12,18 @@ different attacks to hit. The goal will be to get every target that appears.
 
 ###How to Build the Code
 
-	1. Install python3 (https://www.python.org/)
-	2. Install pygame
-			(on OpenSUSE) sudo zypper install python-pygame
-			(for docs)    sudo zypper install python-pygame-doc
-	3. Fork and clone this repository
+1. Install python3 (https://www.python.org/)
+2. Install pygame and pygame documentation on OpenSUSE:
+
+	```sudo zypper install python-pygame```
+	
+	```sudo zypper install python-pygame-doc```
+	
+3. Fork and clone this repository
 
 ###How to Run the Code
 
-	python3 ???name???
+In the terminal: `python3 NinjaGame.py`
 
 ###Dependencies
 
@@ -34,7 +37,11 @@ If you want to file a bug report, please open a GitHub Issue.
 
 ###How to Contribute
 
-???
+If you wish to contribute to the project, go for it! Once you have made changes,
+create a pull request. A pull request from outside contributor must have at least two positive reviews
+before it is ready to be merged. A pull request must be merged by one of us. Please follow the normal Python coding standards
+and use PyDocs. Your pull request will not be merged without proper documentation. Also, use unit tests where possible.
+If you follow all of these guidlines, you will be a successful contributer to our project!
 
 ###System information
 
@@ -46,6 +53,4 @@ At this point, all documentation is in the code.
 
 ###License Information
 
-This software is under the GPL License
-
-###Authors?
+This software is under the GNU General Public License (GPL)
