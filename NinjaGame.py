@@ -1,4 +1,4 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 
 ########################################################################
 # File Name: 	NinjaGame.py
@@ -12,6 +12,7 @@
 import os, sys
 import pygame
 from Background import *
+from Character import *
 from pygame.locals import *
 
 SCREEN_LENGTH = 900
@@ -20,8 +21,12 @@ SCREEN_WIDTH = 600
 def main():
 	pygame.init()
 	screen = pygame.display.set_mode ((SCREEN_LENGTH, SCREEN_WIDTH))
+	
 	background = Background ()
+	ninja = Character()
+	
 	background.setSurfaceToBackground(screen)
+	ninja.draw(screen)
 	pygame.display.update()
 	
 	while True:
@@ -29,5 +34,5 @@ def main():
 			break
 
 # invoke main()
-if __name__=="__main__" :
+if __name__=="__main__":
 	main()
