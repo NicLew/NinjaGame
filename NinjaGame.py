@@ -21,9 +21,12 @@ SCREEN_WIDTH = 600
 def main():
 	pygame.init()
 	screen = pygame.display.set_mode ((SCREEN_LENGTH, SCREEN_WIDTH))
+	
 	background = Background ()
-	background.setSurfaceToBackground(screen)
 	ninja = Character()
+	
+	background.setSurfaceToBackground(screen)
+	ninja.draw(screen)
 	pygame.display.update()
 	
 	while True:
