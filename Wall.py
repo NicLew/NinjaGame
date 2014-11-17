@@ -11,12 +11,18 @@
 
 import pygame
 
+VERTICAL = 90
+
 class Wall(pygame.sprite.Sprite):
 	def __init__(self, x = 0, y = 0, vertical = False):
+		"""Constructor for the wall object.
+			Sets location to the passed in coordinates.
+			If vertical is True, rotate the wall 90 degrees
+		"""
 		pygame.sprite.Sprite.__init__(self)
 		self.image = pygame.image.load ('NinjaGame_Wall.png').convert()
 		if vertical:
-			self.image = pygame.transform.rotate(self.image, 90)
+			self.image = pygame.transform.rotate(self.image, VERTICAL)
 		self.rect = self.image.get_rect().move (x, y)
 			
 		

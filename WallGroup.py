@@ -15,6 +15,10 @@ from Wall import *
 
 class WallGroup:
 	def __init__(self, screen):
+		"""Constructor for the WallGroup object
+			Sets the sprite group to hold the top, right, bottom,
+			and left walls. 
+		"""
 		self._walls = pygame.sprite.Group()
 		topWall = Wall()
 		rightWall = Wall (880, 0, True)
@@ -26,9 +30,16 @@ class WallGroup:
 		self._walls.add (leftWall)
 	
 	def draw (self, screen):
+		""" Draws the walls to the screen
+		"""
 		self._walls.draw(screen)
 		
 	def checkForCollisions (self, checkedSprite):
+		""" Checks if the passed in sprite collides with any of the 
+			walls.
+			If a collision is found, return the wall that is being
+			collided into. Otherwise, return -1.
+		"""
 		for wall in self._walls.sprites():
 			if pygame.sprite.collide_rect(checkedSprite, wall):
 				return wall
