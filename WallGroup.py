@@ -14,7 +14,7 @@ import pygame
 from Wall import *
 
 class WallGroup:
-	def __init__(self, screen):
+	def __init__(self):
 		"""Constructor for the WallGroup object
 			Sets the sprite group to hold the top, right, bottom,
 			and left walls. 

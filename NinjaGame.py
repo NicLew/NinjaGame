@@ -25,7 +25,7 @@ def main():
 	screen = pygame.display.set_mode ((SCREEN_LENGTH, SCREEN_WIDTH))	
 	background = Background ()
 	background.setSurfaceToBackground(screen)
-	walls = WallGroup(screen)
+	walls = WallGroup()
 	walls.draw (screen)
 	pygame.display.update()
 	
