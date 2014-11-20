@@ -6,7 +6,7 @@
 # Date: 		12/08/2014
 # Class: 		CS360 - Open Source
 # Assignment: 	Ninja Game - Create Open Source Project
-# Purpose: 		Class for a Target sprite object
+# Purpose: 		Class for a Target group object
 ########################################################################
 
 import pygame
