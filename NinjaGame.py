@@ -16,6 +16,8 @@ from WallGroup import *
 import os, sys
 from Background import *
 from Character import *
+from Target import *
+from TargetGroup import *
 from pygame.locals import *
 
 SCREEN_LENGTH = 900
@@ -26,18 +28,24 @@ def main():
 	screen = pygame.display.set_mode ((SCREEN_LENGTH, SCREEN_WIDTH))	
 	background = Background ()
 	ninja = Character()
+	targets = TargetGroup ()
+	walls = WallGroup()
 	
 	background.setSurfaceToBackground(screen)
-	ninja.draw(screen)
-	
-	walls = WallGroup()
-	walls.draw (screen)
+	clock = pygame.time.Clock()
 
-	pygame.display.update()
-	
 	while True:
-		if pygame.event.poll().type is QUIT:
-			break
+		clock.tick (60)
+		background.setSurfaceToBackground (screen)
+		ninja.draw(screen)
+		targets.draw (screen)
+		targets.update()
+		walls.draw (screen)
+		pygame.display.update()
+		
+		for event in pygame.event.get():
+			if event.type == QUIT:
+				return
 
 # invoke main()
 if __name__=="__main__":
