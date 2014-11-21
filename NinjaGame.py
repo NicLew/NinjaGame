@@ -49,6 +49,7 @@ def main():
 				return
 			if event.type == MOUSEBUTTONUP:
 				ninja.setIsMoving(True)
+				#ninja.setIsFirstClick(not ninja.getIsFirstClick())
 				ninja.move(walls)
 
 # invoke main()
