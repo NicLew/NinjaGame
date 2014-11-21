@@ -13,6 +13,7 @@
 import pygame
 from Wall import *
 
+
 class WallGroup:
 	def __init__(self):
 		"""Constructor for the WallGroup object
@@ -20,14 +21,17 @@ class WallGroup:
 			and left walls. 
 		"""
 		self._walls = pygame.sprite.Group()
-		topWall = Wall()
-		rightWall = Wall (880, 0, True)
-		bottomWall = Wall(0, 580)
-		leftWall = Wall(0, 0, True)
-		self._walls.add (topWall)
-		self._walls.add (rightWall)
-		self._walls.add (bottomWall)
-		self._walls.add (leftWall)
+		
+		# Made these public attributes so I could use them to check which wall the Character is hitting in Character.move()
+		self.topWall = Wall()
+		self.rightWall = Wall (880, 0, True)
+		self.bottomWall = Wall(0, 580)
+		self.leftWall = Wall(0, 0, True)
+		
+		self._walls.add (self.topWall)
+		self._walls.add (self.rightWall)
+		self._walls.add (self.bottomWall)
+		self._walls.add (self.leftWall)
 	
 	def draw (self, screen):
 		""" Draws the walls to the screen

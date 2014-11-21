@@ -37,15 +37,19 @@ def main():
 	while True:
 		clock.tick (60)
 		background.setSurfaceToBackground (screen)
-		ninja.draw(screen)
 		targets.draw (screen)
 		targets.update()
 		walls.draw (screen)
+		ninja.draw(screen)
+		ninja.update(walls)
 		pygame.display.update()
 		
 		for event in pygame.event.get():
 			if event.type == QUIT:
 				return
+			if event.type == MOUSEBUTTONUP:
+				ninja.setIsMoving(True)
+				ninja.move(walls)
 
 # invoke main()
 if __name__=="__main__":
