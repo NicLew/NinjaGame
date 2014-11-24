@@ -12,7 +12,7 @@ different attacks to hit. The goal will be to get every target that appears.
 
 ###How to Build the Code
 
-1. Install python3 (https://www.python.org/)
+1. Install python2 (https://www.python.org/)
 2. Install pygame and pygame documentation on OpenSUSE:
 
 	```sudo zypper install python-pygame```
@@ -23,7 +23,7 @@ different attacks to hit. The goal will be to get every target that appears.
 
 ###How to Run the Code
 
-In the terminal: `python3 NinjaGame.py`
+In the terminal: `python2 NinjaGame.py`
 
 ###Dependencies
 
