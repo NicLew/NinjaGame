@@ -54,3 +54,5 @@ At this point, all documentation is in the code.
 ###License Information
 
 This software is under the GNU General Public License (GPL)
+
+![alt text](https://github.com/cs360f14/NinjaGame/blob/master/NinjaGame_Background.png "Background Image")
