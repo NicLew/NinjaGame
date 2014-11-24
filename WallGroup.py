@@ -1,13 +1,13 @@
 #1/usr/bin/python3
 
 ########################################################################
-# File Name: WallGroup.py
-# Authors: Nicole Lewey and Jacob Lundgren
-# Date: 12/08/2014
-# Class: CS360 - Open Source
-# Assignment: Ninja Game - Create Open Source Project
-# Purpose: Sets up 4 walls in a sprite group and provides functions
-#			for that sprite group
+# File Name: 	WallGroup.py
+# Authors: 		Nicole Lewey and Jacob Lundgren
+# Date: 		12/08/2014
+# Class: 		CS360 - Open Source
+# Assignment: 	Ninja Game - Create Open Source Project
+# Purpose: 		Sets up 4 walls in a sprite group and provides functions
+#				for that sprite group
 ########################################################################
 
 import pygame
@@ -21,13 +21,11 @@ class WallGroup:
 			and left walls. 
 		"""
 		self._walls = pygame.sprite.Group()
-		
-		# Made these public attributes so I could use them to check which wall the Character is hitting in Character.move()
 		self.topWall = Wall()
 		self.rightWall = Wall (880, 0, True)
 		self.bottomWall = Wall(0, 580)
 		self.leftWall = Wall(0, 0, True)
-		
+
 		self._walls.add (self.topWall)
 		self._walls.add (self.rightWall)
 		self._walls.add (self.bottomWall)
