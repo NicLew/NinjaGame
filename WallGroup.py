@@ -1,4 +1,4 @@
-#1/usr/bin/python3
+#1/usr/bin/python2
 
 ########################################################################
 # File Name: 	WallGroup.py
@@ -13,6 +13,7 @@
 import pygame
 from Wall import *
 
+
 class WallGroup:
 	def __init__(self):
 		"""Constructor for the WallGroup object
@@ -24,6 +25,7 @@ class WallGroup:
 		self.rightWall = Wall (880, 0, True)
 		self.bottomWall = Wall(0, 580)
 		self.leftWall = Wall(0, 0, True)
+
 		self._walls.add (self.topWall)
 		self._walls.add (self.rightWall)
 		self._walls.add (self.bottomWall)
