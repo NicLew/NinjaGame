@@ -9,6 +9,8 @@
 # Purpose: 		Main for the Ninja Game
 ########################################################################
 
+import math
+
 class Direction:
 	
 	def __init__(self):
@@ -17,48 +19,55 @@ class Direction:
 		self._speed = 5
 
 	def calcDirection(self, charX, charY, mouseX, mouseY):
-		# y = mx + b, y' = (b-x)/-m (inverse???)
-		if 0 != charX - mouseX:
+		# y = mx + b
+		if not charX == mouseX:
 			
 			m = (charY - mouseY) / (charX - mouseX)
 			b = charY - (m * charX)
 			
-			#inverse???
-			"""if mouseX > charX:
-				if mouseY > charY:
-					newY = (b - (charX + self._speed)) / -m # 4, x and y get larger
+			if mouseX < charX:
+				if mouseY < charY:
+					newY = m * (charX + self._speed) + b# 4, x and y get larger
+					self._xOffset = self._speed
+					self._yOffset = math.fabs(charY - newY)
 					print('4\n')
 				else:
-					newY = (b - (charX + self._speed)) / -m # 2, x gets larger, y gets smaller
+					newY = m * (charX + self._speed) + b# 2, x gets larger, y gets smaller, WORKS
+					self._xOffset = self._speed
+					self._yOffset = -1 * math.fabs(charY - newY)
 					print('2\n')
-			else:# mouseX < charX
-				if mouseY > charY:
-					newY = (b - (charX + self._speed)) / -m # 3, x gets smaller, y gets larger
+			else: # if mouseX < charX
+				if mouseY < charY:
+					newY = m * (charX - self._speed) + b# 3, x gets smaller, y gets larger
+					self._xOffset = -self._speed
+					self._yOffset = math.fabs(charY - newY)
 					print('3\n')
 				else:
-					newY = (b - (charX + self._speed)) / -m # 1, x and y get smaller
+					newY = m * (charX - self._speed) + b# 1, x and y get smaller, WORKS
+					self._xOffset = -self._speed
+					self._yOffset = -1 * math.fabs(charY - newY)
 					print('1\n')
 			
-			self._xOffset = self._speed
-			self._yOffset = charY - newY"""
-			
-			if mouseX > charX:
+			"""if mouseX > charX:
 				if mouseY > charY:
-					newY = m * (charX - self._speed) + b# 4, x and y get larger
+					newY = m * (charX + self._speed) + b# 4, x and y get larger
+					self._xOffset = self._speed
 					print('4\n')
 				else:
-					newY = m * (charX - self._speed) + b# 2, x gets larger, y gets smaller, WORKS
+					newY = m * (charX + self._speed) + b# 2, x gets larger, y gets smaller, WORKS
+					self._xOffset = self._speed
 					print('2\n')
 			else: # if mouseX < charX
 				if mouseY > charY:
-					newY = m * (charX + self._speed) + b# 3, x gets smaller, y gets larger
+					newY = m * (charX - self._speed) + b# 3, x gets smaller, y gets larger
+					self._xOffset = -self._speed
 					print('3\n')
 				else:
-					newY = m * (charX + self._speed) + b# 1, x and y get smaller, WORKS
-					print('1\n')
+					newY = m * (charX - self._speed) + b# 1, x and y get smaller, WORKS
+					self._xOffset = -self._speed
+					print('1\n')"""
 			
-			self._xOffset = self._speed
-			self._yOffset = charY - newY
+			#self._yOffset = charY - newY
 			
 		else:
 			self._xOffset = 0
