@@ -41,7 +41,16 @@ If you wish to contribute to the project, go for it! Once you have made changes,
 create a pull request. A pull request from outside contributor must have at least two positive reviews
 before it is ready to be merged. A pull request must be merged by one of us. Please follow the normal Python coding standards
 and use PyDocs. Your pull request will not be merged without proper documentation. Also, use unit tests where possible.
-If you follow all of these guidlines, you will be a successful contributer to our project!
+If you follow all of these guidlines, you will be a successful contributor to our project!
+
+Some additional features we would like:
+* Title screen
+* Levels
+* More possible moves
+* Gamemodes
+* Choose your character option
+* Tracking statistics
+* Music and sound effects
 
 ###System information
 
