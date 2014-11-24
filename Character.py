@@ -48,35 +48,61 @@ class Character(pygame.sprite.Sprite):
 			self.move(walls)
 		
 	def move(self, walls):
-		if walls.checkForCollisions(self) is walls.topWall or \
-		   walls.checkForCollisions(self) is walls.bottomWall or \
-		   walls.checkForCollisions(self) is walls.leftWall or \
-		   walls.checkForCollisions(self) is walls.rightWall:# change to rotate sprite accordingly??? # Add get methods to WallGroup for each Wall?
+		if walls.checkForCollisions(self) is not -1:
 			self._isMoving = False
+			self.stopAndRotate(walls)
 		else:
 			self.setLocation(self._direction.getXOffset(), self._direction.getYOffset())
 			self.rect = self.rect.move(self._direction.getXOffset(), self._direction.getYOffset())# move() adds value to x and y, doesn't replace and returns new Rect
 			
+	def stopAndRotate(self, walls):
+		wall = walls.checkForCollisions(self)
+		if not self._isMoving:
+			if wall == walls.topWall:
+				self.image = pygame.transform.rotate(self.image, 180)
+			elif wall == walls.leftWall:
+				self.image = pygame.transform.rotate(self.image, 270)
+			elif wall == walls.rightWall:
+				self.image = pygame.transform.rotate(self.image, 90)
+				
+	def rotateAndMove(self, walls):
+		wall = walls.checkForCollisions(self)
+		if wall == walls.topWall:
+			self.image = pygame.transform.rotate(self.image, 180)
+			self.setLocation(0, 10)
+			self.rect = self.rect.move(0, 10)
+		elif wall == walls.leftWall:
+			self.image = pygame.transform.rotate(self.image, 90)
+			self.setLocation(10, 0)
+			self.rect = self.rect.move(10, 0)
+		elif wall == walls.rightWall:
+			self.image = pygame.transform.rotate(self.image, 270)
+			self.setLocation(-10, 0)
+			self.rect = self.rect.move(-10, 0)
+		elif wall == walls.bottomWall:
+			self.setLocation(0, -10)
+			self.rect = self.rect.move(0, -10)
+	
 	def setDirection(self, mouseX, mouseY):
 		self._direction.calcDirection(self._x, self._y, mouseX, mouseY)
 			
 		
 	def setLocation(self, xOffset, yOffset):
 		""" Sets the x and y values of the location of the character 
-			to the values passed in
+			to the original values plus the values passed in
 		"""
 		self.setXLocation(xOffset)
 		self.setYLocation(yOffset)
 		
 	def setXLocation(self, xOffset):
 		""" Sets the x value of the location of the character to the
-			value passed in
+			original value plus the value passed in
 		"""
 		self._x = self._x + xOffset
 		
 	def setYLocation(self, yOffset):
 		""" Sets the y value of the location of the character to the
-			value passed in
+			original value plus the value passed in
 		"""
 		self._y = self._y + yOffset
 		
@@ -91,9 +117,14 @@ class Character(pygame.sprite.Sprite):
 		return self._y
 		
 	def setIsMoving(self, isMoving):
+		""" Sets the attribute 'isMoving' to the boolean value passed
+			in
+		"""
 		self._isMoving = isMoving
 		
 	def getIsMoving(self):
+		"""Returns the value of isMoving
+		"""
 		return self._isMoving
 		
 	"""def setIsFirstClick(self, isFirstClick):
