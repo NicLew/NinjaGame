@@ -13,9 +13,9 @@ import pygame
 from WallGroup import *
 
 class Character(pygame.sprite.Sprite):
-	
-	def __init__(self, x = 440, y = 530, speed = 5, isMoving = False, \
-				 imageName = 'NinjaGame_StillNinja.png'):
+
+	def __init__(self, x = 440, y = 535, speed = 0, isMoving = False,\
+				 imageName = 'images/NinjaGame_StillNinja.png'):
 		""" Constructor for the Character object
 		"""
 		pygame.sprite.Sprite.__init__(self)

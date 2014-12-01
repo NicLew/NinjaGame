@@ -13,7 +13,7 @@ import pygame
 
 class Background:
 	
-	def __init__ (self, imageName = 'NinjaGame_Background.png'):
+	def __init__ (self, imageName = 'images/NinjaGame_Background.png'):
 		""" Constructor for the Background object
 		"""
 		try:
