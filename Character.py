@@ -21,6 +21,10 @@ FLIP = 180
 COUNTERCLOCKWISE = 90
 CLOCKWISE = -90
 NO_COLLISIONS = -1
+OFF_TOP_WALL = 20
+OFF_LEFT_WALL = 20
+OFF_RIGHT_WALL = 830
+OFF_BOTTOM_WALL = 530
 
 class Character(pygame.sprite.Sprite):
 	
@@ -71,23 +75,24 @@ class Character(pygame.sprite.Sprite):
 			if wall == walls.topWall:
 				self.image = pygame.transform.rotate(self.image, FLIP)
 				self._currentWall = TOP_WALL
-				self.setYLocation(20)
-			elif wall == walls.leftWall:
+				self.setYLocation(OFF_TOP_WALL)
+			if wall == walls.leftWall:
 				self.image = pygame.transform.rotate(self.image, CLOCKWISE)
 				self._currentWall = LEFT_WALL
-				self.setXLocation(20)
-			elif wall == walls.rightWall:
+				self.setXLocation(OFF_LEFT_WALL)
+			if wall == walls.rightWall:
 				self.image = pygame.transform.rotate(self.image, COUNTERCLOCKWISE)
 				self._currentWall = RIGHT_WALL
-				self.setXLocation(830)
-			else:
+				self.setXLocation(OFF_RIGHT_WALL)
+			if wall == walls.bottomWall:
 				self._currentWall = BOTTOM_WALL
-				self.setYLocation(530)
+				self.setYLocation(OFF_BOTTOM_WALL)
 				
 			self.setRectLocation(self._x, self._y)				
 				
 	def rotateAndMove(self):
 		if not self._isMoving:
+			self.image = pygame.transform.rotate(self.image, 0)
 			if self._currentWall == TOP_WALL:
 				self.image = pygame.transform.rotate(self.image, FLIP)
 			elif self._currentWall == LEFT_WALL:
@@ -96,8 +101,8 @@ class Character(pygame.sprite.Sprite):
 				self.image = pygame.transform.rotate(self.image, CLOCKWISE)
 				
 	def spin(self):
-		if self._isMoving:#???
-			self.image = pygame.transform.rotate(self.image, COUNTERCLOCKWISE)
+		#Not sure how to set it back to correct orientation at end of spin...
+		self.image = pygame.transform.rotate(self.image, COUNTERCLOCKWISE)
 	
 	def setDirection(self, mouseX, mouseY):
 		self._direction.calcDirection(self._x, self._y, mouseX, mouseY)
