@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python2
 
 ########################################################################
 # File Name: 	NinjaGame.py
@@ -10,9 +10,10 @@
 ########################################################################
 
 import pygame
+from WallGroup import *
 
 class Character(pygame.sprite.Sprite):
-	
+
 	def __init__(self, x = 440, y = 535, speed = 0, \
 				 imageName = 'images/NinjaGame_StillNinja.png'):
 		""" Constructor for the Character object
@@ -21,6 +22,7 @@ class Character(pygame.sprite.Sprite):
 		self._x = x
 		self._y = y
 		self._speed = speed #may be speed object later on
+		self._isMoving = False
 		
 		try:
 			self._characterImage = pygame.image.load(imageName)
@@ -28,6 +30,35 @@ class Character(pygame.sprite.Sprite):
 		except pygame.error, message:
 			print 'Cannot load image:', imageName
 			raise SystemExit, message
+		self._characterImage.convert()
+		self.rect = self._characterImage.get_rect()
+		self.rect.move(self._x, self._y)
+			
+	def draw(self, screen):
+		""" Draws the character to the screen
+		"""
+		screen.blit(self._characterImage, (self._x, self._y))
+		
+	def update(self, walls):
+		self.kill()
+		if self._isMoving:
+			self.move(walls)
+		
+	def move(self, walls):
+		#calc direction (new x, y coord. * speed)
+		#call setLocation, move until hit a wall
+		if walls.checkForCollisions(self) == walls.topWall:# change to rotate sprite accordingly??? # Add get methods to WallGroup for each Wall?
+			self._isMoving = False
+		else:
+			self.setLocation(self._x, self._y - self._speed)
+		
+	def setLocation(self, x, y):
+		""" Sets the x and y values of the location of the character 
+			to the values passed in
+		"""
+		self.setXLocation(x)
+		self.setYLocation(y)
+		self.rect.move(self._x, self._y)
 		
 	def setXLocation(self, x):
 		""" Sets the x value of the location of the character to the
@@ -51,14 +82,8 @@ class Character(pygame.sprite.Sprite):
 		"""
 		return self._y
 		
-	def setLocation(self, x, y):
-		""" Sets the x and y values of the location of the character 
-			to the values passed in
-		"""
-		self.setXLocation(x)
-		self.setYLocation(y)
+	def setIsMoving(self, isMoving):
+		self._isMoving = isMoving
 		
-	def draw(self, screen):
-		""" Draws the character to the screen
-		"""
-		screen.blit(self._characterImage, (self._x, self._y))
+	def getIsMoving(self):
+		return self._isMoving
