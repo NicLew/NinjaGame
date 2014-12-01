@@ -51,8 +51,8 @@ def main():
 				#ninja.setIsFirstClick(not ninja.getIsFirstClick())
 				x, y = pygame.mouse.get_pos()
 				ninja.setDirection(x, y)
+				ninja.rotateAndMove()
 				ninja.setIsMoving(True)
-				ninja.rotateAndMove(walls)
 
 # invoke main()
 if __name__=="__main__":

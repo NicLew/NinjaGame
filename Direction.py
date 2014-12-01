@@ -16,7 +16,7 @@ class Direction:
 	def __init__(self):
 		self._xOffset = 0
 		self._yOffset = 0
-		self._speed = 5
+		self._speed = 0
 
 	def calcDirection(self, charX, charY, mouseX, mouseY):
 		# y = mx + b
@@ -25,32 +25,45 @@ class Direction:
 			m = (charY - mouseY) / (charX - mouseX)
 			b = charY - (m * charX)
 			
+			self.setSpeed(m)
+			
 			if mouseX > charX:
 				if mouseY > charY:
 					newY = m * (charX + self._speed) + b
 					self._xOffset = self._speed
 					self._yOffset = math.fabs(charY - newY)
-					print('4\n')
 				else:
 					newY = m * (charX + self._speed) + b
 					self._xOffset = self._speed
 					self._yOffset = -1 * math.fabs(charY - newY)
-					print('2\n')
 			else:
 				if mouseY > charY:
 					newY = m * (charX - self._speed) + b
 					self._xOffset = -self._speed
 					self._yOffset = math.fabs(charY - newY)
-					print('3\n')
 				else:
 					newY = m * (charX - self._speed) + b
 					self._xOffset = -self._speed
 					self._yOffset = -1 * math.fabs(charY - newY)
-					print('1\n')
 			
 		else:
 			self._xOffset = 0
 			self._yOffset = 0
+			
+	def setSpeed(self, m):
+		slope = math.fabs(m)
+		#print(slope)
+		
+		if slope > 10:
+			self._speed = 1
+		elif slope > 5:
+			self._speed = 2
+		elif slope > 2:
+			self._speed = 3
+		elif slope > 0.5:
+			self._speed = 5
+		else:
+			self._speed = 6
 			
 	def getXOffset(self):
 		return self._xOffset
