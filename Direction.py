@@ -1,12 +1,12 @@
 #!/usr/bin/python2
 
 ########################################################################
-# File Name: 	NinjaGame.py
+# File Name: 	Direction.py
 # Authors: 		Nicole Lewey and Jacob Lundgren
 # Date: 		12/08/2014
 # Class: 		CS360 - Open Source
 # Assignment: 	Ninja Game - Create Open Source Project
-# Purpose: 		Main for the Ninja Game
+# Purpose: 		Direction module
 ########################################################################
 
 import math
@@ -25,12 +25,20 @@ SPEED_INC_5 = 6
 class Direction:
 	
 	def __init__(self):
+		""" Constructor for the Direction object
+		"""
 		self._xOffset = 0
 		self._yOffset = 0
 		self._speed = 0
 
 	def calcDirection(self, charX, charY, mouseX, mouseY):
-		# y = mx + b
+		""" Calculates the x and y offsets that should
+			be used to go in the correct direction.
+			
+			Uses the current position of the character, the current
+			position of the mouse, and the formula y = mx + b to 
+			calculate the offsets.
+		"""
 		
 		centerX = charX + 50
 		centerY = charY + 50
@@ -70,6 +78,8 @@ class Direction:
 			self._yOffset = 0
 			
 	def setSpeed(self, m):
+		""" Sets the speed according to the steepness of the slope.
+		"""
 		slope = math.fabs(m)
 		
 		if slope == MAX_SLOPE:
@@ -84,7 +94,11 @@ class Direction:
 			self._speed = SPEED_INC_5
 			
 	def getXOffset(self):
+		""" Returns the value of the x offset
+		"""
 		return self._xOffset
 		
 	def getYOffset(self):
+		""" Returns the value of the y offset
+		"""
 		return self._yOffset
