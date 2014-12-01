@@ -28,9 +28,8 @@ OFF_BOTTOM_WALL = 530
 
 class Character(pygame.sprite.Sprite):
 	
-	
 	def __init__(self, x = 440, y = 275, \
-				 imageName = 'NinjaGame_StillNinja.png'):
+				 imageName = 'images/NinjaGame_StillNinja.png'):
 		""" Constructor for the Character object
 		"""
 		pygame.sprite.Sprite.__init__(self)
