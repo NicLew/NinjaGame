@@ -28,15 +28,15 @@ class Target(pygame.sprite.Sprite):
 		# Set up red target images
 		if self._isRed:	
 			try:
-				imageName = 'NinjaGame_RedTarget1.png'
+				imageName = 'images/NinjaGame_RedTarget1.png'
 				self._imageList.append (pygame.image.load (imageName))
-				imageName = 'NinjaGame_RedTarget2.png'
+				imageName = 'images/NinjaGame_RedTarget2.png'
 				self._imageList.append (pygame.image.load (imageName))
-				imageName = 'NinjaGame_RedTarget3.png'
+				imageName = 'images/NinjaGame_RedTarget3.png'
 				self._imageList.append (pygame.image.load (imageName))
-				imageName = 'NinjaGame_RedTarget4.png'
+				imageName = 'images/NinjaGame_RedTarget4.png'
 				self._imageList.append (pygame.image.load (imageName))
-				imageName = 'NinjaGame_RedTarget5.png'
+				imageName = 'images/NinjaGame_RedTarget5.png'
 				self._imageList.append (pygame.image.load (imageName))
 			except pygame.error, message:
 				print 'Cannot load image:', imageName
@@ -45,15 +45,15 @@ class Target(pygame.sprite.Sprite):
 		# Set up green target images
 		else:
 			try:
-				imageName = 'NinjaGame_GreenTarget1.png'
+				imageName = 'images/NinjaGame_GreenTarget1.png'
 				self._imageList.append (pygame.image.load (imageName))
-				imageName = 'NinjaGame_GreenTarget2.png'
+				imageName = 'images/NinjaGame_GreenTarget2.png'
 				self._imageList.append (pygame.image.load (imageName))
-				imageName = 'NinjaGame_GreenTarget3.png'
+				imageName = 'images/NinjaGame_GreenTarget3.png'
 				self._imageList.append (pygame.image.load (imageName))
-				imageName = 'NinjaGame_GreenTarget4.png'
+				imageName = 'images/NinjaGame_GreenTarget4.png'
 				self._imageList.append (pygame.image.load (imageName))
-				imageName = 'NinjaGame_GreenTarget5.png'
+				imageName = 'images/NinjaGame_GreenTarget5.png'
 				self._imageList.append (pygame.image.load (imageName))
 			except pygame.error, message:
 				print 'Cannot load image:', imageName

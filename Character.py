@@ -14,7 +14,7 @@ import pygame
 class Character(pygame.sprite.Sprite):
 	
 	def __init__(self, x = 440, y = 535, speed = 0, \
-				 imageName = 'NinjaGame_StillNinja.png'):
+				 imageName = 'images/NinjaGame_StillNinja.png'):
 		""" Constructor for the Character object
 		"""
 		pygame.sprite.Sprite.__init__(self)

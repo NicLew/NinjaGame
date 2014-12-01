@@ -21,7 +21,7 @@ class Wall(pygame.sprite.Sprite):
 		"""
 		pygame.sprite.Sprite.__init__(self)
 		try:
-			self.image = pygame.image.load ('NinjaGame_Wall.png')
+			self.image = pygame.image.load ('images/NinjaGame_Wall.png')
 		except pygame.error, message:
 			print 'Cannot load image: NinjaGame_Wall.png'
 			raise SystemExit, message
