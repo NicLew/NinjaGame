@@ -48,8 +48,11 @@ def main():
 			if event.type == QUIT:
 				return
 			if event.type == MOUSEBUTTONUP:
+				x, y = pygame.mouse.get_pos()
+				ninja.setIsFirstClick(not ninja.getIsFirstClick())# Use later to identify different attack types
+				ninja.setDirection(x, y)
+				ninja.rotateAndMove()
 				ninja.setIsMoving(True)
-				ninja.move(walls)
 
 # invoke main()
 if __name__=="__main__":
