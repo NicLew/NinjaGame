@@ -14,13 +14,13 @@ import math
 MAX_SLOPE = 10
 MIN_SLOPE = -10
 SLOPE_INC_1 = 5
-SLOPE_INC_2 = 2
+SLOPE_INC_2 = 3
 SLOPE_INC_3 = 0.5
 SPEED_INC_1 = 1
-SPEED_INC_2 = 2
-SPEED_INC_3 = 3
-SPEED_INC_4 = 5
-SPEED_INC_5 = 6
+SPEED_INC_2 = 3
+SPEED_INC_3 = 4
+SPEED_INC_4 = 6
+SPEED_INC_5 = 7
 
 class Direction:
 	
@@ -30,6 +30,9 @@ class Direction:
 		self._xOffset = 0
 		self._yOffset = 0
 		self._speed = 0
+		self._counter = 0
+		self._rise = 0
+		self._run = 0
 
 	def calcDirection(self, charX, charY, mouseX, mouseY):
 		""" Calculates the x and y offsets that should
@@ -39,7 +42,6 @@ class Direction:
 			position of the mouse, and the formula y = mx + b to 
 			calculate the offsets.
 		"""
-		
 		centerX = charX + 50
 		centerY = charY + 50
 		
@@ -76,6 +78,50 @@ class Direction:
 		else:
 			self._xOffset = 0
 			self._yOffset = 0
+			
+	"""def calcDirection(self, charX, charY, mouseX, mouseY):
+		centerX = charX + 50
+		centerY = charY + 50
+		
+		if not centerX == mouseX:
+			self._rise = centerY - mouseY
+			self._run = centerX - mouseX
+			m = self._rise / self._run
+			if m > MAX_SLOPE:
+				m = MAX_SLOPE
+				self._rise = MAX_SLOPE
+				self._run = 1
+			elif m < MIN_SLOPE:
+				m = MIN_SLOPE
+				self._rise = MIN_SLOPE
+				self._run = 1
+				
+			b = centerY - (m * centerX)
+				
+			self.setSpeed(m)
+			
+			if mouseX > centerX:
+				if mouseY > centerY:
+					newY = m * (centerX + self._speed) + b
+					self._xOffset = self._speed
+					self._yOffset = math.fabs(centerY - newY)
+				else:
+					newY = m * (centerX + self._speed) + b
+					self._xOffset = self._speed
+					self._yOffset = -1 * math.fabs(centerY - newY)
+			else:
+				if mouseY > centerY:
+					newY = m * (centerX - self._speed) + b
+					self._xOffset = -self._speed
+					self._yOffset = math.fabs(centerY - newY)
+				else:
+					newY = m * (centerX - self._speed) + b
+					self._xOffset = -self._speed
+					self._yOffset = -1 * math.fabs(centerY - newY)
+			
+		else:
+			self._xOffset = 0
+			self._yOffset = 0"""
 			
 	def setSpeed(self, m):
 		""" Sets the speed according to the steepness of the slope.

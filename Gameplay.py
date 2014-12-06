@@ -76,7 +76,7 @@ class Gameplay:
 			if pygame.font:
 				font = pygame.font.Font (None, 72)
 				score = font.render (str(self._points), 1, (255,255,255))
-				textpos1 = score.get_rect ()
+				textpos1 = score.get_rect ().move(25, 20)
 				self._screen.blit (score, textpos1)
 				
 				if self._gameover:
@@ -94,7 +94,8 @@ class Gameplay:
 				if event.type == QUIT:
 					return
 				if event.type == MOUSEBUTTONUP:
-					if not self._kicking and not self._gameover:
+					if not self._kicking and not self._gameover: 
+					#if not self._gameover:CHANGE BACK, TOOK OUT FOR EASIER DIRECTION TESTING
 						x, y = pygame.mouse.get_pos()
 						self._ninja.setDirection(x, y)
 						self._ninja.rotateAndMove()
