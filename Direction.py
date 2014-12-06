@@ -30,9 +30,11 @@ class Direction:
 		self._xOffset = 0
 		self._yOffset = 0
 		self._speed = 0
-		self._counter = 0
+		
+		# for other version of calcDirection that isn't implemented yet
+		"""self._counter = 0
 		self._rise = 0
-		self._run = 0
+		self._run = 0"""
 
 	def calcDirection(self, charX, charY, mouseX, mouseY):
 		""" Calculates the x and y offsets that should
@@ -79,6 +81,8 @@ class Direction:
 			self._xOffset = 0
 			self._yOffset = 0
 			
+			
+	# different version of calcDirection I started but couldn't finish yet.
 	"""def calcDirection(self, charX, charY, mouseX, mouseY):
 		centerX = charX + 50
 		centerY = charY + 50
