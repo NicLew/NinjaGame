@@ -9,50 +9,17 @@
 # Purpose: 		Main for the Ninja Game
 ########################################################################
 
-
-import pygame
-from Wall import *
-from WallGroup import *
-import os, sys
-from Background import *
-from Character import *
-from Target import *
-from TargetGroup import *
-from pygame.locals import *
+from Gameplay import *
 
 SCREEN_LENGTH = 900
 SCREEN_WIDTH = 600
 
 def main():
-	pygame.init()
-	screen = pygame.display.set_mode ((SCREEN_LENGTH, SCREEN_WIDTH))	
-	background = Background ()
-	ninja = Character()
-	targets = TargetGroup ()
-	walls = WallGroup()
+	""" The main of Ninja Game
+	"""
+	gameplay = Gameplay ()
+	gameplay.gameplayLoop ()
 	
-	background.setSurfaceToBackground(screen)
-	clock = pygame.time.Clock()
-
-	while True:
-		clock.tick (60)
-		background.setSurfaceToBackground (screen)
-		targets.draw (screen)
-		targets.update()
-		walls.draw (screen)
-		ninja.draw(screen)
-		ninja.update(walls)
-		pygame.display.update()
-		
-		for event in pygame.event.get():
-			if event.type == QUIT:
-				return
-			if event.type == MOUSEBUTTONUP:
-				x, y = pygame.mouse.get_pos()
-				ninja.setIsFirstClick(not ninja.getIsFirstClick())# Use later to identify different attack types
-				ninja.setDirection(x, y)
-				ninja.rotateAndMove()
-				ninja.setIsMoving(True)
 
 # invoke main()
 if __name__=="__main__":
