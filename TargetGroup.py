@@ -16,7 +16,7 @@ from Target import *
 MAX_TARGETS = 15
 INITIAL_MIN_TARGET_DELAY = 30
 INITIAL_MAX_TARGET_DELAY = 60
-INITIAL_MAX_TARGET_ADDED = 3
+INITIAL_MAX_TARGET_ADDED = 1
 TARGET_X_RANGE = 70, 780
 TARGET_Y_RANGE = 70, 480
 
@@ -83,6 +83,7 @@ class TargetGroup:
 			
 			If a target times out, kill the target.
 		"""
+		deadTarget = False
 		self._targets.update()
 		self._counter += 1
 		
@@ -95,6 +96,9 @@ class TargetGroup:
 		for target in self._targets:
 			if target.timedOut():
 				target.kill()
+				deadTarget = True
+				
+		return deadTarget
 				
 	def checkForCollisions(self, checkedSprite):
 		""" Checks for collisions between all targets and the passed-in

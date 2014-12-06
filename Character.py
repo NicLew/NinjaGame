@@ -25,11 +25,12 @@ OFF_TOP_WALL = 20
 OFF_LEFT_WALL = 20
 OFF_RIGHT_WALL = 830
 OFF_BOTTOM_WALL = 530
+SPIN_FRAME = 2
 
 class Character(pygame.sprite.Sprite):
 	
 	def __init__(self, x = 440, y = 275, \
-				 imageName = 'images/NinjaGame_StillNinja.png'):
+				 imageName = 'images/NinjaGame_StillNinja2.png'):
 		""" Constructor for the Character object
 		"""
 		pygame.sprite.Sprite.__init__(self)
@@ -39,6 +40,7 @@ class Character(pygame.sprite.Sprite):
 		self._isMoving = False
 		self._isFirstClick = False
 		self._currentWall = BOTTOM_WALL
+		self._spinCounter = 0
 		
 		try:
 			self.image = pygame.image.load(imageName)
@@ -48,6 +50,7 @@ class Character(pygame.sprite.Sprite):
 			raise SystemExit, message
 		self.image.convert()
 		self.rect = self.image.get_rect().move(self._x, self._y)
+		self._startImage = self.image
 			
 	def draw(self, screen):
 		""" Draws the character to the screen
@@ -74,13 +77,18 @@ class Character(pygame.sprite.Sprite):
 		else:
 			self.setLocationByOffset(self._direction.getXOffset(), self._direction.getYOffset())
 			self.rect = self.rect.move(self._direction.getXOffset(), self._direction.getYOffset())# move() adds value to x and y, doesn't replace and returns new Rect
-			
+			self._spinCounter += 1
+			if self._spinCounter > SPIN_FRAME:
+				self.spin()
+				self._spinCounter = 0
+				
 	def stopAndRotate(self, walls):
 		""" This function sets the sprite to the proper rotation and
 			location according to the wall it collided with.
 		"""
 		wall = walls.checkForCollisions(self)
 		if not self._isMoving:
+			self.image = self._startImage
 			if wall == walls.topWall:
 				self.image = pygame.transform.rotate(self.image, FLIP)
 				self._currentWall = TOP_WALL
@@ -114,8 +122,7 @@ class Character(pygame.sprite.Sprite):
 	def spin(self):
 		""" Rotates the sprite by 90 degrees.
 		"""
-		#Not sure how to set it back to correct orientation at end of spin... Is there an attribute like x, y? Or use rect.copy() to store original orientation?
-		self.image = pygame.transform.rotate(self.image, COUNTERCLOCKWISE)
+		self.image = pygame.transform.rotate(self.image, CLOCKWISE)
 	
 	def setDirection(self, mouseX, mouseY):
 		""" Sets the direction according to the x and y values of the
@@ -180,3 +187,15 @@ class Character(pygame.sprite.Sprite):
 		"""Returns the value of isFirstClick
 		"""
 		return self._isFirstClick
+		
+	def setCharacterImage (self, imageName):
+		""" Set the character image
+		"""
+		try:
+			self.image = pygame.image.load(imageName)
+			
+		except pygame.error, message:
+			print 'Cannot load image:', imageName
+			raise SystemExit, message
+			
+		self.image.convert()
