@@ -52,6 +52,9 @@ Some additional features we would like:
 * Tracking statistics
 * Music and sound effects
 
+###Contact Information
+If you have any questions, email us at cs.ninja.game@gmail.com
+
 ###System information
 
 This code has been tested on a OpenSUSE 13.1 64 bit Operating System.
@@ -64,4 +67,4 @@ At this point, all documentation is in the code.
 
 This software is under the GNU General Public License (GPL)
 
-![alt text](https://github.com/cs360f14/NinjaGame/blob/master/NinjaGame_Background.png "Background Image")
+![alt text](https://github.com/cs360f14/NinjaGame/blob/master/images/GameScreenshot.png "Game Screenshot")

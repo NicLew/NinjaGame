@@ -25,11 +25,12 @@ OFF_TOP_WALL = 20
 OFF_LEFT_WALL = 20
 OFF_RIGHT_WALL = 830
 OFF_BOTTOM_WALL = 530
+CENTER_X = 445
 SPIN_FRAME = 2
 
 class Character(pygame.sprite.Sprite):
 	
-	def __init__(self, x = 440, y = 275, \
+	def __init__(self, x = CENTER_X, y = OFF_BOTTOM_WALL, \
 				 imageName = 'images/NinjaGame_StillNinja2.png'):
 		""" Constructor for the Character object
 		"""
@@ -38,7 +39,6 @@ class Character(pygame.sprite.Sprite):
 		self._y = y
 		self._direction = Direction()
 		self._isMoving = False
-		self._isFirstClick = False
 		self._currentWall = BOTTOM_WALL
 		self._spinCounter = 0
 		
@@ -63,7 +63,6 @@ class Character(pygame.sprite.Sprite):
 		self.kill()
 		if self._isMoving:
 			self.move(walls)
-			#self.spin()
 		
 	def move(self, walls):
 		""" If the sprite has not collided with a wall, this moves the
@@ -76,7 +75,7 @@ class Character(pygame.sprite.Sprite):
 			self.stopAndRotate(walls)
 		else:
 			self.setLocationByOffset(self._direction.getXOffset(), self._direction.getYOffset())
-			self.rect = self.rect.move(self._direction.getXOffset(), self._direction.getYOffset())# move() adds value to x and y, doesn't replace and returns new Rect
+			self.rect = self.rect.move(self._direction.getXOffset(), self._direction.getYOffset())
 			self._spinCounter += 1
 			if self._spinCounter > SPIN_FRAME:
 				self.spin()
@@ -176,17 +175,6 @@ class Character(pygame.sprite.Sprite):
 		"""Returns the value of isMoving
 		"""
 		return self._isMoving
-		
-	def setIsFirstClick(self, isFirstClick):
-		""" Sets the attribute 'isFirstClick' to the boolean value 
-			passed in
-		"""
-		self._isFirstClick = isFirstClick
-		
-	def getIsFirstClick(self):
-		"""Returns the value of isFirstClick
-		"""
-		return self._isFirstClick
 		
 	def setCharacterImage (self, imageName):
 		""" Set the character image
