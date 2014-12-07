@@ -38,31 +38,13 @@ class TestDirectionFunctions(unittest.TestCase):
 		"""
 		self.assertTrue(self.direction.getYOffset() == 0)
 		
-	def test_setSpeed(self):
-		""" Tests that the functions sets the correct speed according
-			to the slope of the direction
-		"""
-		self.direction.setSpeed(0)
-		self.assertEqual(self.direction._speed, SPEED_INC_5)
-		
-		self.direction.setSpeed(10)
-		self.assertEqual(self.direction._speed, SPEED_INC_1)
-		
-		self.direction.setSpeed(6)
-		self.assertEqual(self.direction._speed, SPEED_INC_2)
-		
-		self.direction.setSpeed(5)
-		self.assertEqual(self.direction._speed, SPEED_INC_3)
-		
-		self.direction.setSpeed(3)
-		self.assertEqual(self.direction._speed, SPEED_INC_4)
-		
-		self.direction.setSpeed(0.5)
-		self.assertEqual(self.direction._speed, SPEED_INC_5)
-		
 	def test_calcDirection(self):
 		""" Tests that the correct x and y offsets are being calculated
 		"""
 		self.direction.calcDirection(0, 0, 10, 10)
-		self.assertEqual(self.direction._xOffset, -6)
-		self.assertEqual(self.direction._yOffset, -6)
+		self.assertEqual(math.floor(self.direction._xOffset), -8)
+		self.assertEqual(math.floor(self.direction._yOffset), -8)
+		
+		self.direction.calcDirection(-25, 0, 0, 0)
+		self.assertEqual(self.direction._xOffset, 0)
+		self.assertEqual(self.direction._yOffset, 0)

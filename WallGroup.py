@@ -42,8 +42,10 @@ class WallGroup:
 			If a collision is found, return the wall that is being
 			collided into. Otherwise, return -1.
 		"""
+		
 		for wall in self._walls.sprites():
-			if pygame.sprite.collide_rect(checkedSprite, wall):
+			
+			if pygame.sprite.collide_rect(wall, checkedSprite):
 				return wall
 		return -1
 		
