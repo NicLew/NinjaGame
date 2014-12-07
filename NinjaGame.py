@@ -20,7 +20,6 @@ def main():
 	gameplay = Gameplay ()
 	gameplay.gameplayLoop ()
 	
-
 # invoke main()
 if __name__=="__main__":
 	main()

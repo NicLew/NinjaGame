@@ -60,7 +60,6 @@ class Character(pygame.sprite.Sprite):
 	def update(self, walls):
 		""" Updates the sprite
 		"""
-		self.kill()
 		if self._isMoving:
 			self.move(walls)
 		

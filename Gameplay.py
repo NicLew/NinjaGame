@@ -22,6 +22,13 @@ from pygame.locals import *
 
 SCREEN_LENGTH = 900
 SCREEN_WIDTH = 600
+FONT_SIZE = 72
+FONT_COLOR = (255,255,255)
+SCORE_LOCATION =  25, 20
+GAMEOVER_TEXT_LOCATION = 300, 250
+CLICKSCREEN_TEXT_LOCATION = 210, 300
+MAX_FRAME_RATE = 60
+
 
 class Gameplay:
 	
@@ -44,7 +51,7 @@ class Gameplay:
 		""" The main game loop
 		"""
 		while True:
-			self._clock.tick (60)
+			self._clock.tick (MAX_FRAME_RATE)
 			
 			# Draw background objects
 			self._background.setSurfaceToBackground (self._screen)
@@ -74,16 +81,16 @@ class Gameplay:
 			
 			# Draw text 
 			if pygame.font:
-				font = pygame.font.Font (None, 72)
-				score = font.render (str(self._points), 1, (255,255,255))
-				textpos1 = score.get_rect ().move(25, 20)
+				font = pygame.font.Font (None, FONT_SIZE)
+				score = font.render (str(self._points), 1, FONT_COLOR)
+				textpos1 = score.get_rect ().move(SCORE_LOCATION)
 				self._screen.blit (score, textpos1)
 				
 				if self._gameover:
-					gameoverText = font.render ("GAME OVER", 1, (255,255,255))
-					textpos2 = gameoverText.get_rect().move (300, 250)
-					clickScreenText = font.render ("CLICK TO RESTART", 1, (255,255,255))
-					textpos3 = clickScreenText.get_rect().move (210, 300)
+					gameoverText = font.render ("GAME OVER", 1, FONT_COLOR)
+					textpos2 = gameoverText.get_rect().move (GAMEOVER_TEXT_LOCATION)
+					clickScreenText = font.render ("CLICK TO RESTART", 1, FONT_COLOR)
+					textpos3 = clickScreenText.get_rect().move (CLICKSCREEN_TEXT_LOCATION)
 					self._screen.blit (gameoverText, textpos2)
 					self._screen.blit (clickScreenText, textpos3)
 				
