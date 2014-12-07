@@ -3,12 +3,12 @@ NinjaGame
 
 ###Description
 
-This game is coded in Python and involves controlling your character by having them jump from wall to wall. When
-the user clicks, the character will jump in the direction of the click. The user can click
-a second time to change the character's direction midair. The current idea is to have the
-character be a ninja. The ninja's first jump will include a sword attack, and their midair
-direction change will include a kicking attack. The game will have targets that require
-different attacks to hit. The goal will be to get every target that appears.
+Ninja Game is coded in Python and involves controlling the ninja by having him jump from wall to wall. When
+the user clicks, the ninja will jump in the direction of the click. The user can click
+a second time to change the ninja's direction and attack type midair. The ninja's first jump will include a sword attack, and his midair
+direction change will include a punching attack. The game will have targets that require
+different attacks to hit. The goal will be to get every target that appears. If you hit a target with the incorrect attack
+type or you let a target time out, you die!
 
 ###How to Build and Run the Code
 
