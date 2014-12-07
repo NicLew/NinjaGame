@@ -37,12 +37,14 @@ If you wish to contribute to the project, go for it!
 
 #####Bug Reporting
 
-If you wish to file a bug report, please open a GitHub Issue. Here are the things you should include:
+If you wish to file a bug report, please open a GitHub Issue marked as a bug. Here are the things you should include:
 * A clear description of the bug you found
 * Screenshots where applicable and possible
 * Clear instructions on how to replicate the bug, if known
 * Where in the code you think the bug may be originating
 * If the bug causes the game to crash, show terminal logs
+
+If you wish to fix a bug, choose from the list of GitHub Issues marked as bugs, assign yourself, fix it, and follow instuctions for making a pull request.
 
 #####Adding a Feature
 If you wish to add a new feature, these are the steps you should take:
