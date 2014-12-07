@@ -44,7 +44,7 @@ If you wish to file a bug report, please open a GitHub Issue marked as a bug. He
 * Where in the code you think the bug may be originating
 * If the bug causes the game to crash, show terminal logs
 
-If you wish to fix a bug, choose from the list of GitHub Issues marked as bugs, assign yourself, fix it, and follow instuctions for making a pull request.
+If you wish to fix a bug, choose from the list of GitHub Issues marked as bugs, assign yourself, fix it, and follow instructions for making a pull request.
 
 #####Adding a Feature
 If you wish to add a new feature, these are the steps you should take:
