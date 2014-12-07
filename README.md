@@ -46,6 +46,7 @@ If you wish to file a bug report, please open a GitHub Issue. Here are the thing
 
 #####Adding a Feature
 If you wish to add a new feature, these are the steps you should take:
+
 1. Choose from the list of additional features we have listed or imagine your own!
 
 2. If you choose from our list of features, look up the enhancement in GitHub Issues. There you should find a detailed description of what we envision that feature being. Assign yourself that issue to show that it is claimed. If you still have questions, email us at cs.ninja.game@gmail.com.
