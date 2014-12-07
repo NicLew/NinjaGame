@@ -12,9 +12,7 @@ different attacks to hit. The goal will be to get every target that appears.
 
 ###How to Build and Run the Code
 
-1. Download and install Python 2.7
-* Download here: https://www.python.org/downloads/
-
+1. Download and install Python 2.7 (https://www.python.org/downloads/)
 2. Download and install pygame and pygame documentation on OpenSUSE. Run the following commands in your terminal:
 
 	```sudo zypper install python-pygame```
@@ -27,7 +25,7 @@ different attacks to hit. The goal will be to get every target that appears.
 	```git clone git@github.com:USERNAME/NinjaGame.git```
 
 5. To run the game, type `python2 NinjaGame.py` in the terminal.
-6. To run unit tests, type `python2 -m unittest [Unit Test Module Name]` (For example, `python2 -m unittest CharacterUnitTests`)
+6. To run unit tests, type `python2 -m unittest [Unit Test Module Name]` in the terminal. (For example, `python2 -m unittest CharacterUnitTests`)
 
 ###Dependencies
 
@@ -35,9 +33,9 @@ Pygame (1.9.1)
 
 ###How to Contribute
 
-If you wish to contribute to the project, go for it!
+If you wish to contribute to the project, go for it! 
 
-####Bug Reporting
+#####Bug Reporting
 
 If you wish to file a bug report, please open a GitHub Issue. Here are the things you should include:
 * A clear description of the bug you found
@@ -46,16 +44,11 @@ If you wish to file a bug report, please open a GitHub Issue. Here are the thing
 * Where in the code you think the bug may be originating
 * If the bug causes the game to crash, show terminal logs
 
-####Adding a Feature
+#####Adding a Feature
 If you wish to add a new feature, these are the steps you should take:
 1. Choose from the list of additional features we have listed or imagine your own!
-2. If you choose from our list of features, look up the enhancement in GitHub Issues. 
-There you should find a detailed description of what we envision that feature being. 
-Assign yourself that issue to show that it is claimed.
-If you still have questions, email us at cs.ninja.game@gmail.com.
-3. If you imagine your own new feature, email us at cs.ninja.game@gmail.com to get permission to go forward.
-In this email provide: a clear description of the feature you would like to add, why this feature would
-improve the game, and an overview of your intended design.
+2. If you choose from our list of features, look up the enhancement in GitHub Issues. There you should find a detailed description of what we envision that feature being. Assign yourself that issue to show that it is claimed. If you still have questions, email us at cs.ninja.game@gmail.com.
+3. If you imagine your own new feature, email us at cs.ninja.game@gmail.com to get permission to go forward. In this email provide: a clear description of the feature you would like to add, why this feature would improve the game, and an overview of your intended design.
 4. If your feature adds any new media (such as new images or sounds), make sure they are under compatible licenses.
 
 List of additional features we would like:
@@ -69,13 +62,15 @@ List of additional features we would like:
 * Tracking statistics
 * Music and sound effects
 * Enhance graphics
+* Adding documentation to the wiki
 
-####Making a Pull Request
+#####Making a Pull Request
 Once you have made changes (by either fixing a bug or adding a feature), create a pull request. For your pull request to be merged, follow these guidelines:
 * A pull request from outside contributor must have at least two positive reviews
 * A pull request must be merged by one of the project leads.
 * Please follow Python coding standards (https://www.python.org/dev/peps/pep-0008/) and use PyDocs for all of your functions. Your pull request will not be merged without proper documentation. 
 * Write unit tests for all functions, where possible, and make sure all tests are passing before submitting your pull request. We will run your tests before merging.
+
 If you follow all of these guidelines, you will be a successful contributor to our project!
 
 ###Goals
@@ -100,6 +95,8 @@ At this point, all documentation is in the code.
 ###License Information
 
 This software is under the GNU General Public License (GPL)
+
 All images in this game are licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0): http://creativecommons.org/licenses/by-nc/4.0/
+
 
 ![alt text](https://github.com/cs360f14/NinjaGame/blob/master/images/GameScreenshot.png "Game Screenshot")
